@@ -27,7 +27,7 @@ The strcmp call functions by loading a pointer to the first argument into regist
 In the binary file, the pointer to the password is loaded into ESI, then the pointer to the user input is loaded into EDI. I patched this second instruction, which loaded the EDI register. Instead of loading it with a pointer to the user input, I loaded it with the value that was already stored in ESI. This meant that ESI and EDI now both contained pointers to the same memory location, and by extension, the strcmp function would always evaluate to true. Since the instruction I edited it to was shorter in length than the original (2 bytes instead of 5), I also added 3 NOP instructions to make up the difference.
 ![patched instruction](/photos/strcmp_hacked.png)  
 
-The equivalent C code would look like:
+The equivalent C code would look like:  
 ![patched instruction C](/photos/equivalent_C.png)  
 
 ## Adding My Name to Credits
