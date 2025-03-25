@@ -28,21 +28,21 @@ In the binary file, the pointer to the password is loaded into ESI, then the poi
 ![patched instruction](/photos/strcmp_hacked.png)  
 
 The equivalent C code would look like:
-![patched instruction C](/photos/equivalent_C.png)
+![patched instruction C](/photos/equivalent_C.png)  
 
 ## Adding My Name to Credits
 When the program needs to write to the console, it will load a pointer to a string into the EDI register, then it call a function to print to the string to the console. If the program wants to print out an empty line, it will load an integer of how many line to skip into the EDI register, then call a skip function to print that many empty lines. Below is the original instructions.  
-![original instruction](/photos/credits_before.png) 
+![original instruction](/photos/credits_before.png)  
 My goal was to add my name to the credits between the "CECS 478 Edition" line and the "*Hacked* by anthonyg" line. In order to print a custom string, I needed to store the string I wanted in memory. I found a section of the binary that was all "0" and seemed to only serve the purpose of padding.  
 ![padding](/photos/store_data_empty_space.png)  
 I added a null terminated character array (string) to this section that contained the string "*Hacked* by Justin Short".  
 ![added string](/photos/added_string.png)  
 Now all I needed to load the pointer to this string into the EDI register and then call the function that prints the string to the console.  
-![print custom string](/photos/credits_hacked.png)
+![print custom string](/photos/credits_hacked.png)  
 
 ## Results/Deliverables
 Hacked Intro Credits:
-![credits](/photos/credits.png)
+![credits](/photos/credits.png)  
 
 Password Bypass(Accepted regardless of what the user inputs):
-![destruct bypassed](/photos/destruct_bypassed.png)
+![destruct bypassed](/photos/destruct_bypassed.png)  
