@@ -1,6 +1,6 @@
 Author: Justin Short  
-Date: 3/24/2025
-Class: CECS 478
+Date: 3/24/2025  
+Class: CECS 478  
 
 # Lab 4: Malware
 This lab involves examining and altering a binary file containing the game "Super Star Trek". The binary file has been modified from the original verison of the game, removing the ability for the player to set the self destruct password.  
